@@ -9,14 +9,13 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const DBURL = 'mongodb://127.0.0.1:27017';
-// const DBURL = process.env.DBURL || 'mongodb://127.0.0.1:27017';
+// const DBURL = 'mongodb://127.0.0.1:27017';
+const DBURL = process.env.DBURL || 'mongodb://127.0.0.1:27017';
 const database = "Paripoorna";
 const collection = 'Docs';
 const PORT = process.env.PORT || 5000;
 
 const mongoClient = mongodb.MongoClient;
-
 
 app.get('/', async (req, res) => {
     res.send("This is from our awesome paripoorna backend.....");
